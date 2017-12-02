@@ -4,24 +4,25 @@ public class MyFirstProgram {
   public static void main(String[] args) {
     hello("Nadezhda");
     hello("Viktor");
-    double l = 5;
-    double a = 2;
-    double b = 6;
-    System.out.println("Area of square = " + area(l));
 
-    System.out.println("Area of прямоугольника со сторонами " + a + " and " + b + " = " + area(a,b));
-}
+    Square s = new Square(5);
+    Rectangle r = new Rectangle(2, 6);
+
+    System.out.println("Area of square with side " + s.l +" = " + area(s));
+
+    System.out.println("Area of rectangle with sides " + r.a + " and " + r.b + " = " + area(r));
+  }
 
   public static void hello(String somebody) {
     System.out.println("Hello, " + somebody + "!");
   }
 
-  public static double area(double len){
-    return len * len;
+  public static double area(Square s) {
+    return s.l * s.l;
   }
 
-  public static double area(double a, double b){
-    return a * b;
+  public static double area(Rectangle r) {
+    return r.a * r.b;
   }
 
 }
